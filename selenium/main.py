@@ -21,6 +21,6 @@ driver.get('https://www.fmyokohama.co.jp/program/listentomydark')
 # 要素が全て検出できるまで待機する
 wait.until(EC.presence_of_all_elements_located)
 
-print(driver.find_element_by_xpath('//*[@id="container"]/main/div[3]/div[2]/span').text)
+print(driver.find_element(By.XPATH, '//*[@id="container"]/main/div[3]/div[2]/span').text)
 print(driver.current_url)
 driver.quit()
