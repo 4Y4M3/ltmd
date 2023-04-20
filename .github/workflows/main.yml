@@ -1,5 +1,8 @@
 name: selenium-github-actions
-on: [push]
+on:
+  schedule:
+    - cron: '0 15 * * 1'
+  workflow_dispatch:
 jobs:
   selenium:
     runs-on: ubuntu-latest
