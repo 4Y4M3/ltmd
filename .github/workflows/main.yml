@@ -9,8 +9,22 @@ jobs:
         with:
           python-version: '3.10'
           architecture: 'x64'
-      - run: |
+      - name: pip setting
+        run: |
           pip install --upgrade pip
           pip install get-chrome-driver --upgrade
           pip install -r selenium/requirements.txt
-          python selenium/main.py
+      - name: scraping
+        working-directory: selenium
+        run: |
+          python main.py
+          mv README.md ./../README.md　# README.mdを上書き
+      - name: commit files
+        run: | # githubの設定
+          git config --global user.name "${{ github.ACTOR }}"
+          git config --global user.email "${{ github.EMAIL }}"
+          git add README.md
+          git commit -m 'update README.md'
+          git push origin main # mainブランチにプッシュ
+          
+
