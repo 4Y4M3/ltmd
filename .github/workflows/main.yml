@@ -18,13 +18,13 @@ jobs:
         working-directory: selenium
         run: |
           python main.py
-          mv README.md ./../README.md　# README.mdを上書き
+          mv README.md ./../README.md
       - name: commit files
-        run: | # githubの設定
+        run: |
           git config --global user.name "${{ github.ACTOR }}"
           git config --global user.email "${{ github.EMAIL }}"
           git add README.md
           git commit -m 'update README.md'
-          git push origin main # mainブランチにプッシュ
+          git push origin main
           
 
