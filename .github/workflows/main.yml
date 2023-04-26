@@ -14,7 +14,6 @@ jobs:
           architecture: 'x64'
       - name: pip setting
         run: |
-          pip install --upgrade pip
           pip install get-chrome-driver --upgrade
           pip install -r selenium/requirements.txt
       - name: scraping
