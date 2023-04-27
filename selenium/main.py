@@ -20,7 +20,7 @@ driver.implicitly_wait(10)
 
 driver.get(url)
 
-WebDriverWait(driver, 15).until(EC.visibility_of_element_located(By.CLASS_NAME, 'timeline-item'))
+WebDriverWait(driver, 15).until(EC.visibility_of_element_located((By.CLASS_NAME, 'timeline-item')))
 elems_item = driver.find_elements(By.CLASS_NAME, 'timeline-item')
 
 print(len(elems_item))
